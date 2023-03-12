@@ -4,6 +4,7 @@ import Public from './components/Public';
 import Login from './features/auth/Login'
 import Welcome from './features/auth/Welcome';
 import RequireAuth from './features/auth/RequireAuth'
+import UsersList from './features/users/UsersList';
 
 import './App.css';
 
@@ -14,13 +15,14 @@ function App() {
         {/* публичные роутеры для неавторизированных пользователей */}
         <Route index element={<Public />} />
         <Route path='login' element={<Login />} />
-        <Route path='welcome' element={<Welcome />} />
+        {/* <Route path='welcome' element={<Welcome />} /> */}
 
         {/* публичные роутеры для авторизированных пользователей element={<RequireAuth/>} обязательно 
         внутри этого вставлять всё остальное что должно быть защищено */}
-        {/* <Route element={<RequireAuth />}>
+        <Route element={<RequireAuth />}>
           <Route path='welcome' element={<Welcome />} />
-        </Route> */}
+          <Route path='userslist' element={<UsersList />} />
+        </Route>
 
       </Route>
     </Routes>

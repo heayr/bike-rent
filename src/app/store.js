@@ -12,12 +12,3 @@ export const store = configureStore({
   devTools: true /* убрать когда будет версия для production */
 });
 
-// export const store = configureStore({
-//   reducer: {
-//     [apiSlice.reducerPath]: apiSlice.reducer,
-//     auth: authReducer,
-//   },
-//   middleware: getDefaultMiddleware => getDefaultMiddleware().concat(apiSlice.middleware),
-//   devTools: true,
-//   // !after development set devTools to false
-// });

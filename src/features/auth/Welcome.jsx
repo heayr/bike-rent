@@ -7,14 +7,13 @@ const Welcome = () => {
   const token = useSelector(selectCurrentToken);
   console.log(token);
   const welcome = email ? `Welcome ${email}!` : "Welcome";
-  // const tokenAbbr = `${token.slice(0, 9)}...`;
-  // !решить проблему с  TypeError: Cannot read properties of undefined (reading 'slice')
+  const tokenAbbr = `${token.slice(0, 9)}...`;
   const content = (
     <section className="welcome">
       <h1>{welcome}</h1>
-      {/* <p>Token: {tokenAbbr}</p> */}
+      <p>Token: {tokenAbbr}</p>
       <p>
-        <Link to="/userlist">Go to the Users List</Link>
+        <Link to="/userslist">Go to the Users List</Link>
       </p>
     </section>
   );

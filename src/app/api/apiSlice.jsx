@@ -3,7 +3,7 @@ import { setCredentials, logOut } from "../../features/auth/authSlice";
 // сначала создаем baseQuery - поскольку используем Redux, то вместо axios бужет эта функция
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: "https://sf-final-project-be.herokuapp.com/api/auth/sign_in",
+  baseUrl: "https://sf-final-project-be.herokuapp.com",
   //   credentials: "include", должны отправлять cookies, но пока они ток мешаются вроде как...
   //? credentials: "include",
   //? credentials: "same-origin",
