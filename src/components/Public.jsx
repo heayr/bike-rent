@@ -7,6 +7,8 @@ const Public = () => {
       <header className={css.header}>
         <h1 className={css.header__title}>Велопрокат</h1>
         <Link to="/login">Логин для Админа</Link>
+        <br />
+        <Link to="/register">Регистрация</Link>
       </header>
       <main>
         <p>здесь будет типа инфоблок</p>

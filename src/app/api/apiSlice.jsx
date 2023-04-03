@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { setCredentials, logOut } from "../../features/auth/authSlice";
-// сначала создаем baseQuery - поскольку используем Redux, то вместо axios бужет эта функция
+// сначала создаем baseQuery - поскольку используем Redux, то вместо axios будет эта функция
 
 const baseQuery = fetchBaseQuery({
   baseUrl: "https://sf-final-project-be.herokuapp.com",

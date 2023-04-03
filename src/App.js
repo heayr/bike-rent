@@ -5,6 +5,8 @@ import Login from './features/auth/Login'
 import Welcome from './features/auth/Welcome';
 import RequireAuth from './features/auth/RequireAuth'
 import UsersList from './features/users/UsersList';
+import Register from './features/register/Register';
+// import SignupForm from './features/register/RegisterFormik';
 
 import './App.css';
 
@@ -15,7 +17,7 @@ function App() {
         {/* публичные роутеры для неавторизированных пользователей */}
         <Route index element={<Public />} />
         <Route path='login' element={<Login />} />
-        {/* <Route path='welcome' element={<Welcome />} /> */}
+        <Route path='register' element={<Register />} />
 
         {/* публичные роутеры для авторизированных пользователей element={<RequireAuth/>} обязательно 
         внутри этого вставлять всё остальное что должно быть защищено */}
