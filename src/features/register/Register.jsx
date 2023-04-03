@@ -25,9 +25,7 @@ const Register = () => {
   const [register, { isLoading }] = useRegisterMutation();
   const dispatch = useDispatch();
 
-  //   useEffect(() => {
-  //     email.current.focus();
-  //   }, []);
+
 
   useEffect(() => {
     setErrMsg("");
