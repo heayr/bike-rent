@@ -6,7 +6,7 @@ const Public = () => {
     <section>
       <header className={css.header}>
         <h1 className={css.header__title}>Велопрокат</h1>
-        <Link to="/login">Логин для Админа</Link>
+        <Link to="/login">Логин </Link>
         <br />
         <Link to="/register">Регистрация</Link>
       </header>

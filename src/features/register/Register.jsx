@@ -85,6 +85,26 @@ const Register = () => {
       <h1>Employee Register</h1>
 
       <form onSubmit={handleSubmit}>
+        <label htmlFor="firstName">firstName:</label>
+        <input
+          type="text"
+          id="firstName"
+          ref={firstNameRef}
+          value={firstName}
+          onChange={handlefirstNameInput}
+          autoComplete="off"
+          required
+        />
+        <label htmlFor="lastName">lastName:</label>
+        <input
+          type="text"
+          id="lastName"
+          ref={lastNameRef}
+          value={lastName}
+          onChange={handlelastNameInput}
+          autoComplete="off"
+          required
+        />
         <label htmlFor="email">Email:</label>
         <input
           type="text"

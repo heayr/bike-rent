@@ -6,6 +6,7 @@ import Welcome from './features/auth/Welcome';
 import RequireAuth from './features/auth/RequireAuth'
 import UsersList from './features/users/UsersList';
 import Register from './features/register/Register';
+import RequireApproved from './features/auth/RequireApproved'
 
 import './App.css';
 
@@ -22,6 +23,9 @@ function App() {
         внутри этого вставлять всё остальное что должно быть защищено */}
         <Route element={<RequireAuth />}>
           <Route path='welcome' element={<Welcome />} />
+          {/* <Route path='userslist' element={<UsersList />} /> */}
+        </Route>
+        <Route element={<RequireApproved />}>
           <Route path='userslist' element={<UsersList />} />
         </Route>
 

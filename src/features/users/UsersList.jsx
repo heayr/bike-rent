@@ -27,7 +27,7 @@ const UsersList = () => {
             return (
               <li key={i}>
                 Имя: {user.firstName}, Фамилия: {user.lastName}, Почта:{" "}
-                {user.email}, approved: {user.approved}, id: {user._id}, пароль:{" "}
+                {user.email}, approved: {user.approved ? 'Подтверждено' : 'Не Подтверждено'}, id: {user._id}, пароль:{" "}
                 {user.password}
               </li>
             );
