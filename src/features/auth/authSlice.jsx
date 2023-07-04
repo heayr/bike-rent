@@ -6,7 +6,7 @@ const authSlice = createSlice({
     email: null, 
     token: null,
      approved: false,
-     cliendId: null,
+     clientId: null,
 
      },
   reducers: {
@@ -15,13 +15,13 @@ const authSlice = createSlice({
       state.email = action.payload.email;
       state.token = action.payload.data.token;
       state.approved = action.payload.data.user.approved;
-      state.cliendId = action.payload.data.user.id;
+      state.clientId = action.payload.data.user.clientId;
     },
     logOut: (state, action) => {
       state.email = null;
       state.token = null;
       state.approved = false;
-      state.cliendId = null;
+      state.clientId = null;
     },
   },
 });
