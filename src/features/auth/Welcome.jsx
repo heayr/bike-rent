@@ -22,6 +22,7 @@ const Welcome = () => {
         <>
           <p>
             <Link to="/userslist">Go to the Users List</Link>
+            <Link to='/addofficer' >Добавить админа</Link>
           </p>
           <p>{approvedAbbr}</p>
         </>

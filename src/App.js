@@ -7,6 +7,7 @@ import RequireAuth from './features/auth/RequireAuth'
 import UsersList from './features/users/UsersList';
 import Register from './features/register/Register';
 import RequireApproved from './features/auth/RequireApproved'
+import AddOfficer from './components/AddOfficer';
 
 import './App.css';
 
@@ -27,6 +28,7 @@ function App() {
         </Route>
         <Route element={<RequireApproved />}>
           <Route path='userslist' element={<UsersList />} />
+          <Route path='addofficer' element={<AddOfficer/>} />
         </Route>
 
       </Route>
