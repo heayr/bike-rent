@@ -1,10 +1,11 @@
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { useRef, useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { setOfficerCredentials } from '../features/registerOfficer/registerOfficerSlice' ;
+import { setOfficerCredentials } from "../features/registerOfficer/registerOfficerSlice";
 import { nanoid } from "@reduxjs/toolkit";
 import { useNavigate } from "react-router-dom";
-import { useRegisterMutation } from '../features/registerOfficer/registerOfficerApiSlice';
+import { useGiveAdminRightsMutation } from "../features/registerOfficer/registerOfficerApiSlice";
+
 
 const AddOfficer = () => {
   const firstNameRef = useRef();
@@ -12,7 +13,7 @@ const AddOfficer = () => {
   const passwordRef = useRef();
   const emailRef = useRef();
   const errRef = useRef();
-  const approvedRef = useRef();
+  // const approvedRef = useRef();
 
 
   const [firstName, setfirstName] = useState("");
@@ -20,13 +21,13 @@ const AddOfficer = () => {
   const [email, setEmail] = useState("");
   const [password, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
-  const [clientId, setclientId] = nanoid();
-  const [approved, setApproved] = useState('approved');
+  const [clientId] = nanoid();
+  // const [approved, setApproved] = useState('');
 
   const navigate = useNavigate();
 
 
-  const [register, { isLoading }] = useRegisterMutation();
+  const [registerOfficer, { isLoading }] = useGiveAdminRightsMutation();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -37,13 +38,13 @@ const AddOfficer = () => {
     e.preventDefault();
 
     try {
-      const userData = await register({
+      const userData = await registerOfficer({
         firstName,
         lastName,
         email,
         password,
         clientId,
-        approved,
+        // approved,
       }).unwrap();
       console.log(userData);
       dispatch(setOfficerCredentials({ ...userData, email }));
@@ -52,7 +53,7 @@ const AddOfficer = () => {
       setEmail("");
       clientId("");
       setPwd("");
-      setApproved('true');
+      // setApproved('true');
       navigate("/welcome");
     } catch (err) {
       if (!err?.originalStatus) {
@@ -126,6 +127,7 @@ const AddOfficer = () => {
           type="password"
           id="password"
           onChange={handlePwdInput}
+          ref={passwordRef}
           value={password}
           required
         

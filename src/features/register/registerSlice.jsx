@@ -18,9 +18,8 @@ const registerSlice = createSlice({
       state.firstName = action.payload.data.firstName;
       state.lastName = action.payload.data.lastName;
       state.clientId = action.payload.data.clientId;
-      state.approved = action.payload.data.approved;
+      // state.approved = action.payload.data.approved;
       state.password = action.payload.data.password;
-      state.approved = false;
       
     },
   },

@@ -2,7 +2,7 @@ import { apiSlice } from "../../app/api/apiSlice";
 
 export const registerOfficerApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
-    register: builder.mutation({
+    giveAdminRights: builder.mutation({
       query: (setOfficerCredentials) => ({
         url: "https://sf-final-project-be.herokuapp.com/api/officers" /* конечная точка URL */,
         method: "POST",
@@ -13,5 +13,8 @@ export const registerOfficerApiSlice = apiSlice.injectEndpoints({
 });
 
 // эти мутации автоматически генерируются
-export const { useRegisterMutation } =
+export const { useGiveAdminRightsMutation } =
   registerOfficerApiSlice; /* небольшая деструктуризация */
+
+
+  //! builder.mutation changed to builder.query 

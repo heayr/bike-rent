@@ -8,7 +8,7 @@ const registerOfficerSlice = createSlice({
     firstName: null,
     lastName: null,
     // clientId: null,
-    approved: true,
+    // approved: true,
     password: null,
   },
   reducers: {
@@ -18,7 +18,7 @@ const registerOfficerSlice = createSlice({
       state.firstName = action.payload.data.firstName;
       state.lastName = action.payload.data.lastName;
       // state.clientId = action.payload.data.clientId;
-      state.approved = true;
+      // state.approved = true;
       state.password = action.payload.data.password;
     },
   },
