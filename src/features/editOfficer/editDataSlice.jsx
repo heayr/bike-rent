@@ -10,6 +10,7 @@ const editDataSlice = createSlice({
     lastName: null,
     approved: null,
     password: null,
+    id: null,
     },
     reducers: {
     setCredentials: (state, action) => {
@@ -17,7 +18,7 @@ const editDataSlice = createSlice({
         state.token = action.payload.data.token;
         state.firstName = action.payload.data.firstName;
         state.lastName = action.payload.data.lastName;
-        state.clientId = action.payload.data.clientId;
+        state.id = action.payload.id;
         state.approved = action.payload.data.approved;
         state.password = action.payload.data.password;
     },
@@ -26,3 +27,4 @@ const editDataSlice = createSlice({
 
 export const { setCredentials } = editDataSlice.actions;
 export default editDataSlice.reducer;
+

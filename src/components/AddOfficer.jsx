@@ -5,6 +5,7 @@ import { setOfficerCredentials } from "../features/registerOfficer/registerOffic
 import { nanoid } from "@reduxjs/toolkit";
 import { useNavigate } from "react-router-dom";
 import { useGiveAdminRightsMutation } from "../features/registerOfficer/registerOfficerApiSlice";
+import { Link } from "react-router-dom";
 
 
 const AddOfficer = () => {
@@ -15,17 +16,15 @@ const AddOfficer = () => {
   const errRef = useRef();
   const approvedRef = useRef();
 
-
   const [firstName, setfirstName] = useState("");
   const [lastName, setlastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [clientId] = nanoid();
-  const [approved, setApproved] = useState('true');
+  const [approved, setApproved] = useState("true");
 
   const navigate = useNavigate();
-
 
   const [registerOfficer, { isLoading }] = useGiveAdminRightsMutation();
   const dispatch = useDispatch();
@@ -53,7 +52,7 @@ const AddOfficer = () => {
       setEmail("");
       clientId("");
       setPwd("");
-      setApproved('true');
+      setApproved("true");
       navigate("/welcome");
     } catch (err) {
       if (!err?.originalStatus) {
@@ -69,11 +68,9 @@ const AddOfficer = () => {
     }
   };
 
-
   const handlefirstNameInput = (e) => setfirstName(e.target.value);
   const handlelastNameInput = (e) => setlastName(e.target.value);
   const handleEmailInput = (e) => setEmail(e.target.value);
-
   const handlePwdInput = (e) => setPwd(e.target.value);
 
   const content = isLoading ? (
@@ -88,7 +85,7 @@ const AddOfficer = () => {
         {errMsg}
       </p>
 
-      <h1>Добавить Офицера Register</h1>
+      <h1>Добавить Офицера</h1>
 
       <form onSubmit={handleSubmit}>
         <label htmlFor="firstName">firstName:</label>
@@ -130,30 +127,20 @@ const AddOfficer = () => {
           ref={passwordRef}
           value={password}
           required
-        
         />
         {/* <input type="checkbox" id="admin" checked ref={approvedRef}/> */}
-        
-        <button>Add ADMIN</button>
 
+        <button>Add ADMIN</button>
       </form>
+
+      <Link to="/welcome">Начальная страница</Link>
+
     </section>
   );
 
   return content;
 };
 
-
-
-
-
-
-console.log('я тут');
-
+console.log("я тут");
 
 export default AddOfficer;
-
-
-
-
-

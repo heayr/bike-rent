@@ -4,7 +4,7 @@ export const editDataApiSlice = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
         editOfficer: builder.mutation({
             query: (credentials) => ({
-                url: 'https://sf-final-project-be.herokuapp.com/api/officers/:id',
+                url: `https://sf-final-project-be.herokuapp.com/api/officers/${credentials.id}`,
                 method: 'PUT',
                 body: {...credentials},
             }),
@@ -12,4 +12,4 @@ export const editDataApiSlice = apiSlice.injectEndpoints({
     })
 })
 
-export const { officerEditMutation } = editDataApiSlice;
+export const { useEditOfficerMutation } = editDataApiSlice;
