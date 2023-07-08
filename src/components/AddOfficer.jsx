@@ -13,7 +13,7 @@ const AddOfficer = () => {
   const passwordRef = useRef();
   const emailRef = useRef();
   const errRef = useRef();
-  // const approvedRef = useRef();
+  const approvedRef = useRef();
 
 
   const [firstName, setfirstName] = useState("");
@@ -22,7 +22,7 @@ const AddOfficer = () => {
   const [password, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [clientId] = nanoid();
-  // const [approved, setApproved] = useState('');
+  const [approved, setApproved] = useState('true');
 
   const navigate = useNavigate();
 
@@ -44,7 +44,7 @@ const AddOfficer = () => {
         email,
         password,
         clientId,
-        // approved,
+        approved,
       }).unwrap();
       console.log(userData);
       dispatch(setOfficerCredentials({ ...userData, email }));
@@ -53,7 +53,7 @@ const AddOfficer = () => {
       setEmail("");
       clientId("");
       setPwd("");
-      // setApproved('true');
+      setApproved('true');
       navigate("/welcome");
     } catch (err) {
       if (!err?.originalStatus) {

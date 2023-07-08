@@ -10,7 +10,7 @@ const UsersList = () => {
     isError,
     error,
   } = useGetUsersQuery();
-  console.log(UsersList);
+  // console.log(UsersList);
   let content;
   if (isLoading) {
     content = <p>"Loading..."</p>;

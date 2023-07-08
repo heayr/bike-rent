@@ -5,7 +5,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
     getUsers: builder.query({
       query: () => "https://sf-final-project-be.herokuapp.com/api/officers/",
 
-      // keepUnusedDataFor: 5,
+      keepUnusedDataFor: 1,
     }),
   }),
 });
