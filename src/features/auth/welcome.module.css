@@ -1,0 +1,38 @@
+.title {
+    background-color: rgb(10, 94, 62); 
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+	height: 55px;
+    margin: 0;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.list_item {
+    margin: 20px 10px;
+}
+
+.list_item_link {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    background-color: rgb(10, 94, 62);
+    transition: linear 0.2s;
+}
+
+.list_item_link:hover{
+    background-color: rgb(18, 201, 131);
+
+}

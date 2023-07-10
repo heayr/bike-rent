@@ -1,17 +1,20 @@
 import { Link } from "react-router-dom";
-import css from "./style.css";
+import styles from "./public.module.css";
 
 const Public = () => {
   const content = (
-    <section>
-      <header className={css.header}>
-        <h1 className={css.header__title}>Велопрокат</h1>
-        <Link to="/login">Логин для Админа</Link>
+    <section >
+      <header className={styles.header}>
+        <h1 className={styles.header__title}>Велопрокат</h1>
+        <div>
+        <Link className={styles.link} to="/login">Логин </Link>
+        <Link className={styles.link} to="/register">Регистрация</Link>
+        </div>
+
       </header>
-      <main>
-        <p>здесь будет типа инфоблок</p>
+      <main className={styles.main} >
       </main>
-      <footer>
+      <footer className={styles.footer}>
         <p>footer</p>
       </footer>
     </section>

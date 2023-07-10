@@ -10,7 +10,7 @@ const UsersList = () => {
     isError,
     error,
   } = useGetUsersQuery();
-  console.log(UsersList);
+  // console.log(UsersList);
   let content;
   if (isLoading) {
     content = <p>"Loading..."</p>;
@@ -27,7 +27,8 @@ const UsersList = () => {
             return (
               <li key={i}>
                 Имя: {user.firstName}, Фамилия: {user.lastName}, Почта:{" "}
-                {user.email}
+                {user.email}, approved: {user.approved ? 'Подтверждено' : 'Не Подтверждено'}, id: {user._id}, пароль:{" "}
+                {user.password}
               </li>
             );
           })}
@@ -42,35 +43,5 @@ const UsersList = () => {
   return content;
 };
 
-// const UsersList = () => {
-//   const {
-//     // data переименовывется в users!!!
-//     data: users,
-//     isLoading,
-//     isSuccess,
-//     isError,
-//     error,
-//   } = useGetUsersQuery();
-
-//   let content;
-//   if (isLoading) {
-//     content = <p>"Loading..."</p>;
-//   } else if (isSuccess) {
-//     content = (
-//       <section className="users">
-//         <h1>Список пользователей</h1>
-//         <ul>
-//           {users.map((user, i) => {
-//             return <li key={i}>{user.username}</li>;
-//           })}
-//         </ul>
-//         <Link to="/welcome">Back to Welcome</Link>
-//       </section>
-//     );
-//   } else if (isError) {
-//     content = <p>{JSON.stringify(error)}</p>;
-//   }
-//   return content;
-// };
 
 export default UsersList;
