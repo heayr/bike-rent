@@ -1,0 +1,54 @@
+.header {
+    background-color: rgb(10, 94, 62); 
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+	height: 55px;
+
+}
+
+.header__title {
+    font-size: 34px;
+    
+}
+
+.link {
+    font-size: 24px;
+	text-decoration: none;
+    color: #fff;
+    margin: 10px 20px;
+    transition: linear 0.2s;
+    padding: 10px 20px;
+
+
+    
+}
+
+.link:hover {
+    background-color: #041e2e;
+}
+
+.main {
+  min-height: 88vh;
+
+    width: 100%;
+    height: 100%;
+background: url(../../public/blg-post_5ee528a5e1bd1.jpg) no-repeat;
+background-size: cover;
+background-position-y: 55%;
+
+}
+
+
+.footer {
+    background-color: rgb(10, 94, 62); 
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+	height: 55px;
+
+}

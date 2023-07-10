@@ -1,17 +1,32 @@
-import { apiSlice } from "../app/api/apiSlice";
+import { createSlice } from "@reduxjs/toolkit";
 
 
-export const postsSlice = apiSlice.injectEndpoints({
-    endpoints: (builder) => ({
-      createPost: builder.mutation({
-        query: (credentials) => ({
-          url: "https://sf-final-project-be.herokuapp.com/api/cases/" /* конечная точка URL */,
-          method: "POST",
-          body: { ...credentials },
-        }),
-      }),
-    }),
-  });
-  
-  // эти мутации автоматически генерируются
-  export const { useCreatePostMutation } = postsSlice; /* небольшая деструктуризация */
+const postSlice = createSlice({
+    name: 'post',
+    initialState: {
+        licenseNumber: null,
+        ownerFullName: null,
+        type: null,
+        color: null,
+        date: null,
+        id: null,
+        description: null,
+    },
+    reducers: {
+        setCredentials: (state, action) => {
+            state.licenseNumber = action.payload.licenseNumber;
+            state.ownerFullName = action.payload.ownerFullName;
+            state.type = action.payload.type;
+            state.color = action.payload.color;
+            state.date = action.payload.date;
+            state.id = action.payload.id;
+            state.description = action.payload.description;
+        }
+    }
+})
+
+export const { setCredentials } = postSlice.actions;
+export default postSlice.reducer;
+
+export const selectCurrentPostId = (state) => state.data._id;
+export const selectCurrentLicenseNumber = (state) => state.data.licenseNumber;

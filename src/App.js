@@ -12,6 +12,8 @@ import EditOfficer from './components/EditOfficer';
 import GetOfficer from './components/GetOfficer';
 import GetOfficerId from './components/GetOfficerId';
 import Post from './posts/AddPostForm';
+import PostsList from './posts/PostsList';
+import EditPost from './posts/EditPost';
 
 import './App.css';
 
@@ -37,6 +39,8 @@ function App() {
           <Route path='officer' element={<GetOfficer/>} />
           <Route path='officerid' element={<GetOfficerId/>} />
           <Route path='post' element={<Post/>} />
+          <Route path='postslist' element={<PostsList/>} />
+          <Route path='editpost' element={<EditPost/>} />
 
         </Route>
 

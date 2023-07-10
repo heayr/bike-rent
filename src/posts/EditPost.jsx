@@ -1,10 +1,14 @@
+import {useEditPostMutation, useGetPostsQuery} from './postsSliceApi'
 import { useRef, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setCredentials } from "./postsSlice";
-import { useCreatePostMutation } from "./postsSliceApi";
+import { useNavigate } from "react-router-dom";
+import { setCredentials } from './postsSlice';
 
-const Post = () => {
+
+
+
+
+const EditPost = () => {
     const licenseNumberRef = useRef();
     const ownerFullNameRef = useRef();
     const typeRef = useRef();
@@ -14,18 +18,19 @@ const Post = () => {
   const errRef = useRef();
 
 
-    const [licenseNumber, setlicenseNumber] = useState('');
+ const [licenseNumber, setlicenseNumber] = useState('');
     const [ownerFullName, setOwnerFullName] = useState('');
     const [type, setType] = useState('');
     const [date, setDate] = useState('');
     const [id, setId] = useState('');
     const [description, setDescription] = useState('');
     const [errMsg, setErrMsg] = useState("");
-
+// console.log( 'номер лицензии', licenseNum);
   const navigate = useNavigate();
 
-const [createPost, {isLoading}] = useCreatePostMutation();
+  const [createPost, {isLoading}] = useEditPostMutation();
 const dispatch = useDispatch();
+
 
 useEffect(() => {
     setErrMsg('');
@@ -77,6 +82,8 @@ const handleDescription = (e) => setDescription(e.target.value);
 const content = isLoading ? (
     <h1>Loading...</h1>
 ) : (
+    <>
+
     <section>
         <p
         ref={errRef}
@@ -86,6 +93,7 @@ const content = isLoading ? (
         {errMsg}
       </p>
 
+
     <h1>Добавить случай воровства</h1>
     <form onSubmit={handleSubmit}>
         {/*  */}
@@ -94,8 +102,8 @@ const content = isLoading ? (
         id="licenseNumber"
         ref={licenseNumberRef}
         value={licenseNumber}
+        // value={ if (licenseNumber === null) { } }
         onChange={handleLicenseNumber}
-        required
         autoComplete="off"
         />
         {/*  */}
@@ -105,7 +113,6 @@ const content = isLoading ? (
         ref={ownerFullNameRef}
         value={ownerFullName}
         onChange={handleOwnerFullName}
-        required
         autoComplete="off"
         />
         {/*  */}
@@ -115,7 +122,6 @@ const content = isLoading ? (
         ref={typeRef}
         value={type}
         onChange={handleType}
-        required
         autoComplete="off"
         />
         {/*  */}
@@ -146,17 +152,18 @@ const content = isLoading ? (
         autoComplete="off"
         />
         {/*  */}
-        <button>Add Case</button>
+        <button>Edit Case</button>
 
     </form>
 
     </section>
+    </>
 );
 
 return content;
 
 };
 
-console.log('создать случай ');
+console.log('редактировать случай ');
 
-export default Post;
+export default EditPost;

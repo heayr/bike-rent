@@ -1,7 +1,5 @@
 import { useSelector } from "react-redux";
-// import { useRef, useState, useEffect } from "react";
-// import  GetOfficerId  from '../../components/GetOfficerId';
-
+import style from "./welcome.module.css";
 import {
   selectCurrentUser,
   selectCurrentToken,
@@ -13,54 +11,49 @@ const Welcome = () => {
   const email = useSelector(selectCurrentUser);
   const token = useSelector(selectCurrentToken);
   const approved = useSelector(selectApproved);
-  // const clientIdRef = useRef();
-  // const [clientId, setClientId] = useState("");
-  // const handleClientIdInput = (e) => setClientId(e.target.value);
-
-
-
-  console.log(token);
   const welcome = email ? `Welcome ${email}!` : "Welcome";
   const tokenAbbr = `${token.slice(0, 9)}...`;
   const approvedAbbr = approved ? "Подтвержденный аккаунт =)" : "Not Approved";
   const content = (
-    <section className="welcome">
-      <h1>{welcome}</h1>
-      <p>Token: {tokenAbbr}</p>
-      {approved && (
-        <>
-          <p>
-            <Link to="/userslist">Go to the Users List</Link>
-            <Link to='/addofficer' >Добавить админа</Link>
-            {/* <form > */}
-            {/* <label htmlFor="clientId">clientId:</label> */}
-        {/* <input
-          type="text"
-          id="clientId"
-          ref={clientIdRef}
-          value={clientId}
-          onChange={handleClientIdInput}
-          autoComplete="off"
-          required
-        /> */}
-            <Link to='/editofficer' >Редактировать админа</Link>
-            <Link to='/officerid' >ID админа</Link>
-            {/* <Link to={`/officerid/${id}`} >ID админа</Link> */}
+    <>
+      <h1 className={style.title}>{welcome}</h1>
 
-            {/* <Link to='/officer' >ID админа</Link> */}
-            {/* <GetOfficerId/> */}
+      <section className={style.welcome}>
+        {/* <p>Token: {tokenAbbr}</p> */}
+        <p>{approvedAbbr}</p>
+        {approved && (
+          <>
+            <ul className={style.list} >
+              <li className={style.list_item}>
+                <Link className={style.list_item_link} to="/userslist">Go to the Users List</Link>
+              </li>
 
-            {/* </form> */}
-          </p>
-          <p>{approvedAbbr}</p>
-
-          <Link to='/post' >Добавить случай Воровства</Link>
-        </>
-      )}
-    </section>
+              <li className={style.list_item} >
+                <Link className={style.list_item_link} to="/addofficer">Добавить админа</Link>
+              </li>
+              <li className={style.list_item}>
+                <Link className={style.list_item_link} to="/editofficer">Редактировать админа</Link>
+              </li>
+              <li className={style.list_item}>
+                <Link className={style.list_item_link} to="/officerid">ID админа</Link>
+              </li>
+              <li className={style.list_item}>
+                <Link className={style.list_item_link} to="/post">Добавить случай Воровства</Link>
+              </li>
+              <li className={style.list_item}>
+                <Link className={style.list_item_link} to="/postslist">Список известных случаев</Link>
+              </li>
+              <li className={style.list_item}>
+                <Link className={style.list_item_link} to="/editpost"> редактировать случай </Link>
+              </li>
+            </ul>
+          </>
+        )}
+      </section>
+    </>
   );
 
   return content;
 };
 
-  export default Welcome;
+export default Welcome;
