@@ -45,7 +45,7 @@ const AddOfficer = () => {
         clientId,
         approved,
       }).unwrap();
-      console.log(userData);
+      // console.log(userData);
       dispatch(setOfficerCredentials({ ...userData, email }));
       setfirstName("");
       setlastName("");

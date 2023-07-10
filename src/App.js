@@ -9,6 +9,9 @@ import Register from './features/register/Register';
 import RequireApproved from './features/auth/RequireApproved'
 import AddOfficer from './components/AddOfficer';
 import EditOfficer from './components/EditOfficer';
+import GetOfficer from './components/GetOfficer';
+import GetOfficerId from './components/GetOfficerId';
+import Post from './posts/AddPostForm';
 
 import './App.css';
 
@@ -31,6 +34,10 @@ function App() {
           <Route path='userslist' element={<UsersList />} />
           <Route path='addofficer' element={<AddOfficer/>} />
           <Route path='editofficer' element={<EditOfficer/>} />
+          <Route path='officer' element={<GetOfficer/>} />
+          <Route path='officerid' element={<GetOfficerId/>} />
+          <Route path='post' element={<Post/>} />
+
         </Route>
 
       </Route>

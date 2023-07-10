@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 // import { useRef, useState, useEffect } from "react";
+// import  GetOfficerId  from '../../components/GetOfficerId';
 
 import {
   selectCurrentUser,
@@ -43,10 +44,17 @@ const Welcome = () => {
           required
         /> */}
             <Link to='/editofficer' >Редактировать админа</Link>
+            <Link to='/officerid' >ID админа</Link>
+            {/* <Link to={`/officerid/${id}`} >ID админа</Link> */}
+
+            {/* <Link to='/officer' >ID админа</Link> */}
+            {/* <GetOfficerId/> */}
 
             {/* </form> */}
           </p>
           <p>{approvedAbbr}</p>
+
+          <Link to='/post' >Добавить случай Воровства</Link>
         </>
       )}
     </section>

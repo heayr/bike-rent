@@ -23,7 +23,7 @@ const EditOfficer = () => {
   const [id, setId] = useState("");
 
 // булево значение приделать 
-  const [cheked, setCheked] = useState(false);
+  // const [cheked, setCheked] = useState(false);
 
   const navigate = useNavigate();
 
@@ -144,7 +144,7 @@ const EditOfficer = () => {
           id="approved"
           ref={approvedRef}
           // checked={cheked}
-          onChange={() => setCheked(!approved)}
+          onChange={() => setApproved(!approved)}
         />
 
         <button type="submit" > Edit Data of ADMIN</button>
